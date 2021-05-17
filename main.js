@@ -1,4 +1,4 @@
-
+//PRINTER ERROS first variant
 function printerError(s) {
   
   let numerator = s.split("").map((e, i) => s.charCodeAt(i) >= 110 ? "oops" : e ).reduce((acc, current) => {
@@ -17,6 +17,16 @@ function printerError(s) {
 
 console.log(printerError("aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz"));
 console.log(printerError("avbnjxdtfrgsxyz"));
+
+
+//PRINT ERROR second variant
+function printError(s) {
+  return s.match(/[^a-m]/g).length + "/" + s.length;
+}
+
+console.log(printError("aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz"));
+console.log(printError("avbnjxdtfrgsxyz"));
+
 
 
 
