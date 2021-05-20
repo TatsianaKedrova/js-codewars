@@ -40,6 +40,11 @@ function lastSurvivor1(letters,coords) {
 }
 console.log(lastSurvivor2('abd', [0,1]));
 
+let massiv = [6,7,8,9,0]
+for(const v of massiv) {
+  console.log(v);
+
+}
 
 
 
