@@ -28,6 +28,20 @@ console.log(a.splice(0,1));
 console.log(a);
 
 
+function lastSurvivor1(letters,coords) { 
+  return coords.reduce( (letters,coord) => letters.slice(0,coord) + letters.slice(coord+1) , letters );
+ }
+ console.log(lastSurvivor1('abd', [0,1]));
+
+ function lastSurvivor2(string, indices) {
+  const arr = [...string];
+  for (const i of indices) arr.splice(i, 1)
+  return arr[0];
+}
+console.log(lastSurvivor2('abd', [0,1]));
+
+
+
 
 
 
