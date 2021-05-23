@@ -1,52 +1,27 @@
+//WHICH ARE IN KATA
+//Variant 1
+function inArray(array1,array2){
 
-function lastSurvivor(letters, coords) {
-  if(letters.length === (coords.length + 1)) {
-    if(letters.length === 1 && coords.length === 0) {
-      return letters;
-    }
+  let newStr = array2.join(" ");
 
-    let str = [...letters];
-    coords.forEach((el) => {
-      let a = str.splice(el, 1)
-      console.log(a)
-    })
-    return str.join('');
-    // let iteration = coords.filter((el, index) => el === str[el])
-    // return iteration;
-    // let str = [...letters].map((letter, index) => coords.includes(index) ? "oops" : letter);
-    // return str;
-  } 
-}
-
-console.log(lastSurvivor('abd', [0,1]));
-
-let a = ["a","b","c","d","e"];
-
-console.log(a.indexOf("a"));
-console.log(a.splice(1,1));
-console.log(a.splice(0,1));
-console.log(a);
-
-
-function lastSurvivor1(letters,coords) { 
-  return coords.reduce( (letters,coord) => letters.slice(0,coord) + letters.slice(coord+1) , letters );
- }
- console.log(lastSurvivor1('abd', [0,1]));
-
- function lastSurvivor2(string, indices) {
-  const arr = [...string];
-  for (const i of indices) arr.splice(i, 1)
-  return arr[0];
-}
-console.log(lastSurvivor2('abd', [0,1]));
-
-let massiv = [6,7,8,9,0]
-for(const v of massiv) {
-  console.log(v);
+  let newArr = array1.filter(element => newStr.match(element));
+  return newArr.sort();
 
 }
 
 
+//Variant 2
+function inArray1(arr1, arr2) {
+  return arr1.filter(a1 => arr2.find(a2 => a2.match(a1))).sort();
+}
+console.log( inArray(["xyz", "live", "strong"] ,["lively", "alive", "harp", "sharp", "armstrong"]));
+console.log( inArray1(["xyz", "live", "strong"] ,["lively", "alive", "harp", "sharp", "armstrong"]));
+
+console.log( inArray(["live", "strong", "arp"] ,["lively", "alive", "harp", "sharp", "armstrong"]));
+console.log( inArray1(["live", "strong", "arp"] ,["lively", "alive", "harp", "sharp", "armstrong"]));
+
+console.log( inArray(["tarp", "mice", "bull"] ,["lively", "alive", "harp", "sharp", "armstrong"]));
+console.log( inArray1(["tarp", "mice", "bull"] ,["lively", "alive", "harp", "sharp", "armstrong"]));
 
 
 
@@ -76,7 +51,59 @@ for(const v of massiv) {
 
 
 
-// //DEEP COPY VS SHALLOW COPY
+
+
+
+
+// function lastSurvivor(letters, coords) {
+//   if(letters.length === (coords.length + 1)) {
+//     if(letters.length === 1 && coords.length === 0) {
+//       return letters;
+//     }
+
+//     let str = [...letters];
+//     coords.forEach((el) => {
+//       let a = str.splice(el, 1)
+//       console.log(a)
+//     })
+//     return str.join('');
+//     // let iteration = coords.filter((el, index) => el === str[el])
+//     // return iteration;
+//     // let str = [...letters].map((letter, index) => coords.includes(index) ? "oops" : letter);
+//     // return str;
+//   } 
+// }
+
+// console.log(lastSurvivor('abd', [0,1]));
+
+// let a = ["a","b","c","d","e"];
+
+// console.log(a.indexOf("a"));
+// console.log(a.splice(1,1));
+// console.log(a.splice(0,1));
+// console.log(a);
+
+
+// function lastSurvivor1(letters,coords) { 
+//   return coords.reduce( (letters,coord) => letters.slice(0,coord) + letters.slice(coord+1) , letters );
+//  }
+//  console.log(lastSurvivor1('abd', [0,1]));
+
+//  function lastSurvivor2(string, indices) {
+//   const arr = [...string];
+//   for (const i of indices) arr.splice(i, 1)
+//   return arr[0];
+// }
+// console.log(lastSurvivor2('abd', [0,1]));
+
+// let massiv = [6,7,8,9,0]
+// for(const v of massiv) {
+//   console.log(v);
+
+// }
+
+
+//DEEP COPY VS SHALLOW COPY
 
 
 // let a = {
@@ -138,19 +165,6 @@ for(const v of massiv) {
 // console.log(a === d);
 // console.log(a === d);
 // console.log(a === d);
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
