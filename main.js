@@ -1,21 +1,33 @@
-class User {
-  constructor(name) {
-    this.name = name;
+class Task {
+  constructor(title = Task.getDefaultTitle(), isCompleted = false) {
+      this.title = title,
+      this._isCompleted = isCompleted
+      Task.counter +=1
   }
-  sayHi() {
-    alert("Say hi: " + this.name)
-  }
+
+static getDefaultTitle() {
+  return 'Title text';
 }
 
-class Man extends {
-  constructor(props) {
-    this.props = props;
+  completed() {
+    this.isCompleted = true;
   }
-  render() {
-    return (
-      <div>
-{this.props.name} {this.props.age}
-      </div>
-    )
+
+  get isCompleted() {
+    return this._isCompleted === true ? 'task is completed' : 'task is not completed'
   }
 }
+Task.counter = 0;
+
+let task = new Task('Learn ES6', false);
+let task2 = new Task('Learn ReactJS', true);
+let task3 = new Task();
+task.completed();
+console.log(task);
+console.log(task2);
+console.log(task3);
+console.log(Task.counter);
+
+console.log(task.isCompleted, task.isCompleted);
+
+
