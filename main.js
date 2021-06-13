@@ -1,33 +1,29 @@
-class Task {
-  constructor(title = Task.getDefaultTitle(), isCompleted = false) {
-      this.title = title,
-      this._isCompleted = isCompleted
-      Task.counter +=1
+const person = new Object({
+  name: "Tania",
+  age: 32,
+  dance: function () {
+      console.log("She can dance very well");
   }
+})
 
-static getDefaultTitle() {
-  return 'Title text';
-}
+console.log(person);
 
-  completed() {
-    this.isCompleted = true;
-  }
-
-  get isCompleted() {
-    return this._isCompleted === true ? 'task is completed' : 'task is not completed'
+const person1 = {
+  name: "Stas",
+  age: 32,
+  guitar: function () {
+      console.log("He can play guitar very well");
   }
 }
-Task.counter = 0;
+console.log(person1);
 
-let task = new Task('Learn ES6', false);
-let task2 = new Task('Learn ReactJS', true);
-let task3 = new Task();
-task.completed();
-console.log(task);
-console.log(task2);
-console.log(task3);
-console.log(Task.counter);
+Object.prototype.sayHi = function () {
+  console.log("Hello!");
+}
 
-console.log(task.isCompleted, task.isCompleted);
+const lena = Object.create(person);
+lena.name = "Elena";
 
+const str = "I am string";
+const stri = new String("I am phrase");
 
