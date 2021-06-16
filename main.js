@@ -7,9 +7,16 @@ let user = {
   }
 }
 
-let admin = user;
+// let admin = user;
 
-// user = null;
+//  user = null;
+user = {
+  name: "Olesya",
+  age: 100,
+  nationality: "Italy"
+}
+
+
 
 admin.sayHi();
 user.sayHi();
@@ -23,10 +30,6 @@ admin.sayHi();
 user.sayHi();
 
 
-// user = {
-//   age: 100,
-//   nationality: Italy
-// }
 
 
 // console.log(user.nationality)
@@ -55,5 +58,5 @@ user1['f']();
 admin1['f']();
 
 let user2 = {
-  
+
 }
