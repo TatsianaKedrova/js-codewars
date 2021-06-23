@@ -1,36 +1,58 @@
 // Equal Sides Of An Array
 
-function findEvenIndex(arr) {
+ function findEvenIndex(arr) {
 
-if(arr.length === 0 || arr.length > 1000) return;
+    let left = 0;
+    let right = 0;
+    let reducer = (acc, current) => acc + current;
 
-let sumOfArr = arr.reduce((acc, current) => acc + current, 0);
+    if(arr.length === 0 || arr.length > 1000) return -1;
 
-arr.forEach(element => {
-  console.log((sumOfArr - element) / 2);
-})
+    for(let i = 0; i < arr.length; i++) {
+      if(i === 0) {
+        right = arr.slice(1).reduce(reducer, 0);
+        if(right === i) {
+          
+        }
+      }
+    }
 
-return sumOfArr;
 
+
+
+ }
+
+
+
+function findEvenIndex (arr) {
+  let left = 0;
+  let right = 0;
+  const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+
+  if(arr.length === 0 || arr.length > 1000) return -1;
+
+  console.log(arr.length);
+
+  
+  for(let i = 0; i < arr.length; i++){
+    if(i === 0){
+      right = arr.slice(1).reduce(reducer, 0);
+      if(right === i){
+        return i;
+      }
+    }else{
+      left = arr.slice(0, i).reduce(reducer, 0);
+      right = arr.slice(i+1).reduce(reducer, 0);
+      if(left === right){
+        return i;
+      }
+    }
+  }
+
+  return -1;
 }
 
 console.log(findEvenIndex([1,2,3,4,3,2,1]));
-// console.log(findEvenIndex([1,100,50,-51,1,1]));
+console.log(findEvenIndex([1,100,50,-51,1,1]));
 
-
-
-// let sliceExample = arr.slice(0, 3);
-// console.log(sliceExample);
-
-function findSolution (arr) {
-  let left = 0;
-  let right = 0;
-  const reducer = (acc, current) => acc + current;
-}
-
-
-
-let arr1 = [7,8,4,5,6,3,77,88];
-for (let i = 0; i < arr1.length; i++) {
-  console.log(i);
-}
