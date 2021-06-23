@@ -1,62 +1,37 @@
-let user = {
-  name: "Tania",
-  age: 32,
+function divisors(number) {
+  let isPrime = true;
+  let arrOfDivisors = [];
 
-  sayHi() {
-    console.log(`Hello, ${this.name}`)
-  }
+  if (number <= 1) return;
+
+  // if (number > 1) {
+  //   for (let i = 2; i < number; i++) {
+  //     if (number % i === 0) {
+  //       isPrime = false;
+  //       break;
+  //     }
+  //   }
+    
+    for (let i = 2; i < number; i++) {
+      if (number % i === 0) {
+        arrOfDivisors.push(i);
+      }
+    }
+if(arrOfDivisors.length === 0 ) {
+  console.log(`${number} is prime`);
+}
+else {
+  return arrOfDivisors;
 }
 
-// let admin = user;
+  //   console.log(arrOfDivisors);
 
-//  user = null;
-user = {
-  name: "Olesya",
-  age: 100,
-  nationality: "Italy"
+  //   if (isPrime) {
+  //     console.log(`${number} is prime`);
+  //   } else {
+  //     console.log(`${number} is not prime cos isPrime is ${isPrime}`);
+  //   }
+  // }
 }
 
-
-
-admin.sayHi();
-user.sayHi();
-
-user.name = "Stas";
-admin.sayHi();
-user.sayHi();
-
-admin.name = "Vova";
-admin.sayHi();
-user.sayHi();
-
-
-
-
-// console.log(user.nationality)
-
-
-
-let user1 = {
-  name: "John"
-}
-
-let admin1 = {
-  name: "Admin"
-}
-
-function sayBye() {
-   console.log(this.name)
-}
-
-user1.f = sayBye;
-admin1.f = sayBye;
-
-// user1.f();
-// admin1.f();
-
-user1['f']();
-admin1['f']();
-
-let user2 = {
-
-}
+console.log(divisors(0));
