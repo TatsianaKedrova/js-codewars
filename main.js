@@ -1,17 +1,19 @@
-//Find the divisors!
+// Equal Sides Of An Array
 
-function divisors(number) {
-  let arrOfDivisors = [];
+function findEvenIndex(arr) {
 
-  if (number <= 1) return;
+if(arr.length <= 0 || arr.length > 1000) return;
+console.log(arr.length);
+let iterator = arr.entries();
+for(let e of iterator) {
+  console.log(e);
+} 
 
-  if (number > 1) {
-    for (let i = 2; i < number; i++) {
-      if (number % i === 0) {
-        arrOfDivisors.push(i);
-      }
-    }
-  }
-    return arrOfDivisors.length ? arrOfDivisors : `${number} is prime`;
+let sumOfArr = arr.reduce((acc, current) => acc + current, 0);
+return sumOfArr;
+
 }
-console.log(divisors(18));
+
+console.log(findEvenIndex([1,2,3,4,3,2,1]));
+// console.log(findEvenIndex([1,100,50,-51,1,1]));
+
