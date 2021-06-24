@@ -15,13 +15,19 @@
 // }
 
 
+// function closeCompare (a, b, margin = 0) {
+
+//   if(a < b - margin) return -1;
+//   if(a - margin > b ) return 1;
+//   return 0;
+
+// }
+
 function closeCompare (a, b, margin = 0) {
 
-  if(a < b - margin) return -1;
-  if(a - margin > b ) return 1;
-  return 0;
+  return Math.abs(a - b) <= margin ? 0 : a < b ? -1 : 1;
 
 }
 
-console.log(closeCompare(10, 4, 7));
+console.log(closeCompare(20, 14, 2));
 
