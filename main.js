@@ -1,71 +1,17 @@
-// Equal Sides Of An Array
+// Compare within margin
 
-//  function findEvenIndex(arr) {
+function closeCompare (a, b, margin) {
 
-//     let left = 0;
-//     let right = 0;
-//     let reducer = (acc, current) => acc + current;
+  if(margin === undefined) margin = 0;
 
-//     if(arr.length === 0 || arr.length > 1000) return -1;
+ if( Math.abs(a - b) <= margin) {
+   return 0;
+ } else if (a < b && Math.abs(a-b) > margin ) {
+   return -1;
+ } else {
+   return 1;
+ }
 
-//     for(let i = 0; i < arr.length; i++) {
-//       if(i === 0) {
-//         right = arr.slice(1).reduce(reducer, 0);
-//         if(right === i) {
-
-//         }
-//       }
-//     }
-
-
-
-
-//  }
-
-
-
-// function findEvenIndex (arr) {
-//   let left = 0;
-//   let right = 0;
-//   const reducer = (accumulator, currentValue) => accumulator + currentValue;
-
-
-//   if(arr.length === 0 || arr.length > 1000) return -1;
-
-//   console.log(arr.length);
-
-  
-//   for(let i = 0; i < arr.length; i++){
-//     if(i === 0){
-//       right = arr.slice(1).reduce(reducer, 0);
-//       if(right === i){
-//         return i;
-//       }
-//     }else{
-//       left = arr.slice(0, i).reduce(reducer, 0);
-//       right = arr.slice(i+1).reduce(reducer, 0);
-//       if(left === right){
-//         return i;
-//       }
-//     }
-//   }
-
-//   return -1;
-// }
-
-// console.log(findEvenIndex([1,2,3,4,3,2,1]));
-// console.log(findEvenIndex([1,100,50,-51,1,1]));
-
-function thirdVarient (arr) {
-
-  function sum(arr) {
-    return arr.reduce((acc, current) => acc + current, 0);
-  }
-
-  return arr.findIndex((element, index, arr) => {
-    return sum(arr.slice(0,index)) === sum(arr.slice(index+1, arr.length));
-  });
 }
 
-console.log(thirdVarient([1,2,3,4,3,2,1]));
-console.log(thirdVarient([1,100,50,-51,1,1]));
+console.log(closeCompare(4, 5));
