@@ -1,33 +1,36 @@
-// Compare within margin
+//Promise
 
-// function closeCompare (a, b, margin) {
+let promise = new Promise(function (resolve, reject) {
+  setTimeout(() => resolve("done"), 2000);
+});
 
-//   if(margin === undefined) margin = 0;
+let pr = new Promise(function (resolve, reject) {
+  setTimeout(() => reject(new Error("Something went wrong!")), 7000);
+});
 
-//  if( Math.abs(a - b) <= margin) {
-//    return 0;
-//  } else if (a < b && Math.abs(a-b) > margin ) {
-//    return -1;
-//  } else {
-//    return 1;
-//  }
+let prom = new Promise((res, rej) => {
+  setTimeout(() => res("done"), 1000);
+});
+prom.then(
+  (result) => alert(result),
+  (error) => alert(error)
+);
 
-// }
+let promise2 = new Promise((res, rej) => {
+  setTimeout(() => rej(new Error("Something went wrong!!!")));
+}).then(
+  (result) => alert(result),
+  (error) => alert(error)
+);
 
+let promise3 = new Promise((resolve) => {
+  setTimeout(() => resolve("hey darling"), 1000);
+})
+    .then(alert);
 
-// function closeCompare (a, b, margin = 0) {
+let promise4 = new Promise((res, rej) => {
+  setTimeout(() => rej(new Error("Mistake!!!")), 2000)
+})
+  .catch(alert);
 
-//   if(a < b - margin) return -1;
-//   if(a - margin > b ) return 1;
-//   return 0;
-
-// }
-
-function closeCompare (a, b, margin = 0) {
-
-  return Math.abs(a - b) <= margin ? 0 : a < b ? -1 : 1;
-
-}
-
-console.log(closeCompare(20, 14, 2));
 
