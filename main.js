@@ -1,36 +1,37 @@
-//Promise
+// let pr = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve("done");
+//   }, 4000);
+//   // reject();
+// });
+// console.log(pr);
 
-let promise = new Promise(function (resolve, reject) {
-  setTimeout(() => resolve("done"), 2000);
-});
+// let axios = {
 
-let pr = new Promise(function (resolve, reject) {
-  setTimeout(() => reject(new Error("Something went wrong!")), 7000);
-});
+//   get() {
+//     let pr = new Promise((resolve, reject) => {
+//       setTimeout(() => {
+//         resolve("operation is completed!")}, 3000 );
+//     });
+//     return pr;
+//   }
+// };
 
-let prom = new Promise((res, rej) => {
-  setTimeout(() => res("done"), 1000);
-});
-prom.then(
-  (result) => alert(result),
-  (error) => alert(error)
-);
+// console.log(axios.get());
 
-let promise2 = new Promise((res, rej) => {
-  setTimeout(() => rej(new Error("Something went wrong!!!")));
-}).then(
-  (result) => alert(result),
-  (error) => alert(error)
-);
 
-let promise3 = new Promise((resolve) => {
-  setTimeout(() => resolve("hey darling"), 1000);
-})
-    .then(alert);
+console.log("start");
+console.log("start 2");
 
-let promise4 = new Promise((res, rej) => {
-  setTimeout(() => rej(new Error("Mistake!!!")), 2000)
-})
-  .catch(alert);
+function timeOut2sec() {
+  console.log('timeOut2sec');
+}
 
+window.setTimeout( function() {
+  console.log("Inside timeout");
+}, 5000 )
+
+setTimeout(timeOut2sec, 2000);
+
+console.log("End");
 
