@@ -1,37 +1,20 @@
-// let pr = new Promise((resolve, reject) => {
-//   setTimeout(() => {
-//     resolve("done");
-//   }, 4000);
-//   // reject();
-// });
-// console.log(pr);
+let prom = new Promise((res, rej) => {
+  let a = 20;
+  console.log(a);
+  // res(a);
+  rej(new Error("Name: Tatiana"))
+});
+console.log(prom);
 
-// let axios = {
-
-//   get() {
-//     let pr = new Promise((resolve, reject) => {
-//       setTimeout(() => {
-//         resolve("operation is completed!")}, 3000 );
-//     });
-//     return pr;
-//   }
-// };
-
-// console.log(axios.get());
-
-
-console.log("start");
-console.log("start 2");
-
-function timeOut2sec() {
-  console.log('timeOut2sec');
-}
-
-window.setTimeout( function() {
-  console.log("Inside timeout");
-}, 5000 )
-
-setTimeout(timeOut2sec, 2000);
-
-console.log("End");
-
+let prom2 = new Promise((res, rej) => {
+  let a = 40;
+  console.log(a);
+  res({a : "Taniana"});
+})
+.then(result => {
+  console.log("then: ", result)
+}, err => {
+  console.log("err: ", err);
+  return "URL";
+})
+console.log(prom2);
