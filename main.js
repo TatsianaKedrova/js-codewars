@@ -1,73 +1,36 @@
-// // christmas tree
+// this, bind, call, apply
 
-// function christmasTree(height) {
-//   // height is the number of lines
-
-//   if (height < 0 || height > 100) return;
-
-//   let finalStr = "";
-//   for (let i = 1; i <= height; i++) {
-//     let star = String.fromCodePoint(42);
-
-//     let count = height + ( height - 1);
-//       finalStr += `\n${star.repeat(count)}`;
-//     // finalStr += star;
-
-//     // if(height === 1) {
-//     //   return finalStr;
-//     // } else {
-//     //   let count = height + ( height - 1);
-//     //   finalStr += `\n${star.repeat(count)}`;
-//     // }
-
-//     return finalStr;
-   
-//   }
-
-//   return finalStr;
-// }
-
-// console.log(christmasTree(3));
-
-
-// // console.log(String.fromCodePoint(42).repeat(10));
-
-// function xmas(height) {
-//   // add 1 more level for the trunk, e.g. height+1
-//   return Array.from({length: height}, (v, i) => {
-//       return i === height
-//           // that's for the trunk of the tree
-//           ? '*'.padStart(Math.round((2 * i)/2), ' ')
-//           // the actual tree "levels"
-//           : '*'.repeat(2 * i + 1).padStart(2 * i + height-i, ' ');
-//   }).join('\n');
-// }
-
-// console.log(xmas(1));
-
-
-// let arr = Array.from([1,2,3], x => x + x);
-// console.log(arr);
-
-
-//curring - каррирование
-
-function fn(a, b) {
-
+function hello() {
+  console.log("Hello", this);
 }
 
-function multiply(a,b,c) {
-  return a*b*c;
-}
+console.log(hello());
 
-console.log(multiply(2,3,4));
+const person = {
+  name: "Tania",
+  age: 32,
+  sayHello: hello,
+  sayHelloWindow: hello.bind(document),
+  logInfo: function(job, phone) {
+    console.group(`${this.name} info:`)
+    console.log(`Name is ${this.name}`)
+    console.log(`Age is ${this.age}`)
+    console.log(`Job is ${job}`)
+    console.log(`Phone is ${phone}`)
 
-function _multiply(a) {
-  return (b) => {
-    return (c) => {
-      return a*b*c
-    }
+    console.groupEnd()
+
   }
 }
+person.sayHello();
+// console.log(person.sayHello());
 
-console.log(_multiply(2)(4)(5));
+const tania = {
+  name: "Tatiana",
+  age: 33
+}
+
+
+const fnLenaInfoLog = person.logInfo.bind(tania,"Frontend", '201275567779');
+console.log(fnLenaInfoLog());
+person.logInfo.bind(tania);
