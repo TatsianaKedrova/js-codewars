@@ -4,7 +4,7 @@ function hello() {
   console.log("Hello", this);
 }
 
-console.log(hello());
+// console.log(hello());
 
 const person = {
   name: "Tania",
@@ -22,7 +22,7 @@ const person = {
 
   }
 }
-person.sayHello();
+// person.sayHello();
 // console.log(person.sayHello());
 
 const tania = {
@@ -31,6 +31,28 @@ const tania = {
 }
 
 
-const fnLenaInfoLog = person.logInfo.bind(tania,"Frontend", '201275567779');
-console.log(fnLenaInfoLog());
-person.logInfo.bind(tania);
+// const fnLenaInfoLog = person.logInfo.bind(tania,"Frontend", '201275567779');
+// console.log(fnLenaInfoLog());
+// person.logInfo.bind(tania);
+
+console.log(person.logInfo.call(tania,"Frontend", '201275567779'));
+person.logInfo.call(tania,"Frontend", '201275567779')
+// console.log(secondLogInfo());
+
+person.logInfo.apply(tania, ["Frontend", '201275567779']);
+
+
+const array = [1,2,3,4,5];
+
+// function multBy(arr, n) {
+//   return arr.map(function(i) {
+//     return i * n
+//   })
+// }
+
+Array.prototype.multBy = function(n) {
+  return this.map(item => item * n);
+}
+console.log(array.multBy(2));
+
+// console.log(multBy(array, 15));
