@@ -1,21 +1,58 @@
-// closure
+// // closure
 
-let a = 100;
+// let a = 100;
 
-let say = () => {
-    a = 200;
-    
+// let say = () => {
+//   a = 200;
+// };
+
+// say();
+// console.log(a);
+
+// let name = "John";
+// function sayHi() {
+//   console.log("Hi, " + name);
+// }
+
+// name = "Pete";
+
+// sayHi();
+
+// console.log(foo);
+// var foo = 5;
+
+// var c = d * b;
+// var d = 7;
+// var b = 3;
+// console.log(c);
+
+
+display();
+
+function display() {
+    console.log("Hello Hoisting!");
 }
 
-say();
-console.log(a);
+// display2();
 
+// const display2 = function() {
+//     console.log("Hello display2");
+// }
 
-let name = "John";
-function sayHi() {
-    alert("Hi, " + name);
+// displayArrow();
+
+// const displayArrow = function() {
+//     console.log("Hello displayArrow");
+// }
+
+catName("Raisa");
+
+function catName(name) {
+    console.log("My cat's name is " + name);
 }
 
-name = "Pete";
+num = 8;
+num + 7;
+var num;
 
-sayHi();
+console.log(num);
