@@ -1,17 +1,14 @@
-// closures
+//this keyword
 
-
-function makeWorker() {
-    let name = "Pete";
-    let jake = "Jake";
-    
-
-    return function() {
-        console.log(name);
-    };
+const module = {
+    x: 42,
+    getX() {
+        return this.x;
+    }
 }
 
-let name = "John";
-let work = makeWorker();
+console.log(module.getX());
+const unboundGetX = module.getX;
+const boundFetX = unboundGetX.bind(module);
 
-console.log(work);
+console.log(boundFetX());
