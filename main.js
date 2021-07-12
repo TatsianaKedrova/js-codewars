@@ -9,9 +9,15 @@ const waitAndGet = (waitingTime) => {
     }, waitingTime * 1000 )
     : 
     setTimeout(() => {
-        return new Error("This number is not acceptable fir the system");
+        return Promise.reject();
     })
 // return randomNum;
+}
+
+const _waitAndGet = (sec) => {
+
+    return new Promise(() => {})
+
 }
 
 const start = async () => {
@@ -24,4 +30,4 @@ const start = async () => {
 
 }
 
-console.log(5);
+console.log(start());
