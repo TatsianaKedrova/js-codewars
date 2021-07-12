@@ -3,15 +3,15 @@
 const waitAndGet = (waitingTime) => {
     let randomNum = Math.random();
     let resOrRej = Math.random();
-    resOrRej < 0.5 ? 
+    resOrRej <= 0.5 ? 
     setTimeout( () => {
-        return Promise.resolve(randomNum);
+        return new Promise((res, rej) => resolve(randomNum));
     }, waitingTime * 1000 )
     : 
     setTimeout(() => {
-        return Promise.reject();
+        return new Promise((res,rej) => reject(new Error("there is nothing")));
     })
-// return randomNum;
+    return randomNum;
 }
 
 const _waitAndGet = (sec) => {
