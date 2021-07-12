@@ -1,22 +1,16 @@
 // async await
 
 const waitAndGet = (waitingTime) => {
-    let randomNum = Math.random();
-    let resOrRej = Math.random();
-    if(resOrRej <= 0.5) {
-        return new Promise((res, rej) => {
+    
+    return new Promise((res, rej) => {
+        let randomNum = Math.random();
+        let resOrRej = Math.random();
             setTimeout(() => {
-                res(randomNum)
+               resOrRej <= 0.5 ? res(randomNum) :  rej()     
             }, waitingTime * 1000)
-        })
-    } else {
-        return new Promise((res, rej) => {
-            setTimeout(() => {
-                rej()
-            }, waitingTime * 1000)
-        })
-    }
+    })
 }
+
 
 const start = async () => {
     try {
@@ -28,13 +22,5 @@ const start = async () => {
 
 }
 
-console.log(start());
+// console.log(start());
 
-// setTimeout( () => {
-    //     return new Promise((res, rej) => resolve(randomNum));
-    // }, waitingTime * 1000 )
-    // : 
-    // setTimeout(() => {
-    //     return new Promise((res,rej) => reject(new Error("there is nothing")));
-    // })
-    // return randomNum;
