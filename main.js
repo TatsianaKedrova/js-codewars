@@ -1,60 +1,103 @@
 // async await
 
-const waitAndGet = (waitingTime) => {
+
+
+const createUniqueNameGen = (uniqueName) => {
+let counter = 1;
     
-    return new Promise((res, rej) => {
-        let randomNum = Math.random();
-        let resOrRej = Math.random();
-            setTimeout(() => {
-               resOrRej <= 0.5 ? res(randomNum) :  rej()     
-            }, waitingTime * 1000)
-    })
+    return () => {
+        let arr = uniqueName.split('');
+        if(arr.includes('.')) {
+            let indexBeforeDot = arr.indexOf('.');
+            arr.splice(indexBeforeDot, 0, counter)
+        }
+        counter++;
+        return arr.join('');
+    }
 }
 
+const generator1 = createUniqueNameGen("song.mp3");
+const generator2 = createUniqueNameGen("tania-dance.com");
 
-const start = async () => waitAndGet(3);
-// {
-//     try {
-//         const randNumber = await waitAndGet(3);
-//         console.log(randNumber)
-//     } catch {
-//         return Promise.reject();
-//     }
+console.log(generator1());
+console.log(generator1());
+console.log(generator1());
+console.log(generator1());
+console.log(generator2());
+console.log(generator1());
+console.log(generator1());
+console.log(generator1());
 
+// const exampleFunc = (uniqueName) => {
+//     let counter = 1;
+//     return () => {
+//         let arr = uniqueName.split('.');
+//         let result = arr[0] + counter;
+//         counter++;
+//         return result;
+//     }   
 // }
 
-// console.log(start());
+// const func1 = exampleFunc("teddyBear.com");
+// console.log(func1());
+// console.log(func1());
+// console.log(func1());
+// console.log(func1());
+// console.log(func1());
+// console.log(func1());
 
-// Promise.all([start(), start(), start()]).then((result)=> {
-//     console.log(result)
-// }).catch(err => console.log('one or more promises not generated',  err));
 
 
 
-// const hungry = true;
 
-// const eat = new Promise((res, rej) => {
-//     if(hungry) {
-//         const fastfood = {
-//             activity: 'cook noodles',
-//             location: 'McDonalds'
-//         };
-//         res(fastfood)
-//     } else {
-//         rej(err => new Error('Not hungry'))
-//     }
-// });
 
-// const willEat = function() {
-//     eat
-//         .then(result => {
-//         console.log('Going to eat noodles');
-//         console.log(hungry);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const waitAndGet = (waitingTime) => {
+    
+//     return new Promise((res, rej) => {
+//         let randomNum = Math.random();
+//         let resOrRej = Math.random();
+//             setTimeout(() => {
+//                resOrRej <= 0.5 ? res(randomNum) :  rej()     
+//             }, waitingTime * 1000)
 //     })
-//         .catch(err => console.log(err.message))
 // }
 
-// console.log(willEat())
+
+// const start = async () => waitAndGet(3);
+
+
 
 
 
