@@ -1,14 +1,21 @@
-// toString()
-function Dog(name) {
-    this.name = name;
-}
+//spread operator
 
-const dog1 = new Dog('Gabby');
+function sum(x, y, z) {
+    return x + y + z;
+  }
 
-Dog.prototype.toString = function dogToString() {
-    return `${this.name}`;
-};
+  const numbers = [1, 2, 3];
 
-console.log(dog1.toString());
+  console.log(sum(...numbers));
+  console.log(sum.apply(null, numbers));
 
-console.log((10).toString());
+  let numberStore = [0, 1, 2];
+let newNumber = 12;
+numberStore = [...numberStore, newNumber];
+
+console.log(numberStore);
+console.log(numberStore);
+console.log(numberStore);
+console.log(numberStore);
+
+
