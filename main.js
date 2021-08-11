@@ -42,5 +42,44 @@ items.sort((a, b) => {
 });
 console.log(items);
 
+let numberArray = [40, 1, 5, 200];
+numberArray.sort();
+console.log(numberArray);
+
+numberArray.sort((a, b) => a - b);
+console.log(numberArray);
+
+let numericStringArray = ['80', '9', '700'];
+numericStringArray.sort();
+console.log(numericStringArray);
+
+numericStringArray.sort((a, b) => a - b);
+console.log(numericStringArray);
+
+numericStringArray.sort((a, b) => {
+
+  if(a < b) {
+    return -1;
+  } else if(a > b) {
+    return 1; 
+  } else {
+    return 0;
+  }
+});
+console.log(numericStringArray);
+
+//parseInt method to convert string into number
+
+let str = "3000";
+console.log(parseInt(str));
+
+
+
+
+
+
+
+
+
 
 
