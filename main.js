@@ -59,36 +59,42 @@
 // user.sayHi();
 
 
-function makeCounter() {
-    let count = 0;
+// function makeCounter() {
+//     let count = 0;
 
-    return function () {
-        return count++;
-    }
-}
+//     return function () {
+//         return count++;
+//     }
+// }
 
-let firstCount = makeCounter();
-let secondCount = makeCounter();
-let thirdCount = makeCounter();
-let fourthCount = makeCounter();
+// let firstCount = makeCounter();
+// let secondCount = makeCounter();
+// let thirdCount = makeCounter();
+// let fourthCount = makeCounter();
 
-console.log(firstCount);
-console.log(secondCount);
-console.log(thirdCount);
-console.log(fourthCount);
+// console.log(firstCount);
+// console.log(secondCount);
+// console.log(thirdCount);
+// console.log(fourthCount);
 
-console.log(firstCount());
-console.log(firstCount());
-console.log(secondCount());
-console.log(thirdCount());
-console.log(fourthCount());
+// console.log(firstCount());
+// console.log(firstCount());
+// console.log(secondCount());
+// console.log(thirdCount());
+// console.log(fourthCount());
 
+//scope
+// if (true) {
+//     const message = 'Hello'
+// }
+// console.log(message) // ReferenceError: message is not defined
 
 if (true) {
+    // область видимости блока if
     const message = 'Hello'
+    console.log(message) // 'Hello'
 }
-console.log(message) // ReferenceError: message is not defined
-
+console.log(message) // ReferenceError
 
 
 
