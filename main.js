@@ -1,103 +1,30 @@
-//Number.prototype.toString()
+//Immer
 
-// let a = new Number(2);
-// console.log(typeof a);
+const baseState = [
 
-// let b = 2;
-// console.log(typeof b);
+    {
+        title: "Tania Junior React Developer",
+        done: true
+    },
+    {
+        title: "Tania Senior React Developer",
+        done: true
+    }
 
-// let num = Number("123");
-// console.log(num);
-// console.log(typeof num);
+];
 
-//closure
-// let name = "John";
-
-// function sayHi() {
-//   alert("Hi, " + name);
-// }
-
-// name = "Pete";
-
-// sayHi(); // что будет показано: "John" или "Pete"?
-
-// function makeWorker() {
-//     let name = "Pete";
-
-//     return function() {
-//         alert(name);
-//     };
-// }
-
-// let name = "John";
-
-// let work = makeWorker();
-// work();
-
-
-// function sayHiBye(firstName, lastName) {
-
-//     // функция-помощник, которую мы используем ниже
-//     function getFullName() {
-//       return firstName + " " + lastName;
-//     }
-  
-//     alert( "Hello, " + getFullName() );
-//     alert( "Bye, " + getFullName() );
-  
-//   }
-
-//   console.log(sayHiBye("Tania", "Kedrova"));
-
-// function User(name) {
-//     this.sayHi = function() {
-//         alert(name);
-//     };
-// }
-
-// let user = new User("John");
-// user.sayHi();
-
-
-// function makeCounter() {
-//     let count = 0;
-
-//     return function () {
-//         return count++;
-//     }
-// }
-
-// let firstCount = makeCounter();
-// let secondCount = makeCounter();
-// let thirdCount = makeCounter();
-// let fourthCount = makeCounter();
-
-// console.log(firstCount);
-// console.log(secondCount);
-// console.log(thirdCount);
-// console.log(fourthCount);
-
-// console.log(firstCount());
-// console.log(firstCount());
-// console.log(secondCount());
-// console.log(thirdCount());
-// console.log(fourthCount());
-
-//scope
-// if (true) {
-//     const message = 'Hello'
-// }
-// console.log(message) // ReferenceError: message is not defined
-
-if (true) {
-    // область видимости блока if
-    const message = 'Hello'
-    console.log(message) // 'Hello'
+const nextState = baseState.slice();
+nextState[1] = {
+    ...nextState[1],
+    done: true
 }
-console.log(message) // ReferenceError
 
+const hero = {
+    name: 'Batman',
+    realName: 'Bruce Wayne'
+  };
+  
+const {name, realName} = hero;
 
-
-
-
-
+console.log(name);
+console.log(realName);
