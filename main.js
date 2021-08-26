@@ -1,14 +1,11 @@
-//null vs undefined
+//Function.name
 
-let _thisIsUndefined;
-const doNothing = () => {}
-const someObj = {
-    a: 'ay',
-    b: 'bee',
-    c: 'si'
+const func1 = function() {};
+
+const obj = {
+    func2: function() {}
 }
-console.log(_thisIsUndefined) // undefined
-console.log(doNothing()) // undefined
-console.log(someObj['d']) // undefined
 
+console.log(func1.name);
+console.log(obj.func2.name);
 
