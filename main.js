@@ -1,30 +1,14 @@
-//Immer
+//null vs undefined
 
-const baseState = [
-
-    {
-        title: "Tania Junior React Developer",
-        done: true
-    },
-    {
-        title: "Tania Senior React Developer",
-        done: true
-    }
-
-];
-
-const nextState = baseState.slice();
-nextState[1] = {
-    ...nextState[1],
-    done: true
+let _thisIsUndefined;
+const doNothing = () => {}
+const someObj = {
+    a: 'ay',
+    b: 'bee',
+    c: 'si'
 }
+console.log(_thisIsUndefined) // undefined
+console.log(doNothing()) // undefined
+console.log(someObj['d']) // undefined
 
-const hero = {
-    name: 'Batman',
-    realName: 'Bruce Wayne'
-  };
-  
-const {name, realName} = hero;
 
-console.log(name);
-console.log(realName);
