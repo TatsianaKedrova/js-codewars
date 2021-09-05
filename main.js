@@ -1,11 +1,13 @@
-//Function.name
+//write oen map function
 
-const func1 = function() {};
-
-const obj = {
-    func2: function() {}
+function mapOwn(arr, mapFunc) {
+    const mapArr = [];
+    for(let i = 0; i < arr.length; i++) {
+        const result = mapFunc(arr[i], i, arr);
+        mapArr.push(result);
+    }
+    return mapArr;
 }
 
-console.log(func1.name);
-console.log(obj.func2.name);
-
+const a = mapOwn(array1, x => x * 3);
+console.log(a);
