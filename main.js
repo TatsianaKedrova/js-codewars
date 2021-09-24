@@ -1,74 +1,42 @@
-//recursion
-function pow(x,n) {
-    let result = 1;
+// const array = [1,2,3,4];
+// for (var i = 0; i < array.length; i++) {
+//     setTimeout(function() {
+//         console.log(i)
+//     }, 3000)
+// }
 
-    for (let i = 1; i <= n; i++) {
-        result *= x;
+// for(let i = 0; i < array.length; i++) {
+//     setTimeout(function() {
+//         console.log(i)
+//     }, 400)
+// }
+
+function sayHiBye(firstName, lastName) {
+    function getFullName() {
+        return firstName + " " + lastName;
     }
-    return result;
+
+    console.log("Hello", getFullName())
 }
 
-console.log(pow(5,3));
+console.log(sayHiBye("Tania","Kedrova"))
 
+function makeCounter() {
+    let count = 0;
 
-//recursion
-function pow2(x, n) {
-    if(n === 1) {
-        return x;
-    } else if (n === 0) {
-        return 1;
-    } else {
-        return x * pow2(x, n - 1);
-    }
-}
-
-console.log(pow2(5,3));
-
-function pow3(x, n) {
-  return (n === 1) ? x : (x * pow3(x, n - 1));
-}
-
-console.log(pow3(5,3));
-
-
-//LinkedList
-
-class Node {
-    constructor(element) {
-        this.element = element;
-        this.next = null
+    return function() {
+        return count++;
     }
 }
 
-//tasks
+let counter = makeCounter();
+console.log(counter());
+console.log(counter());
+console.log(counter());
+console.log(counter());
 
-function f() {
-    var a = b = 10;
-}
-
-console.log(f());
-// console.log(a);
-console.log(b);
-
-
-function f2() {
-    var a = 10;
-}
-
-// console.log(a);
-
-if(true) {
-    var b = 100;
-    let c = 10;
-}
-
-console.log(b);
-// console.log(c);
-
-
-//scope
-
-const message = "Hello";
-console.log(message);
-
-
+let counter2 = makeCounter();
+console.log(counter2());
+console.log(counter2());
+console.log(counter2());
+console.log(counter2());
