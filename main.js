@@ -1,42 +1,37 @@
-// const array = [1,2,3,4];
-// for (var i = 0; i < array.length; i++) {
-//     setTimeout(function() {
-//         console.log(i)
-//     }, 3000)
-// }
+//function
 
-// for(let i = 0; i < array.length; i++) {
-//     setTimeout(function() {
-//         console.log(i)
-//     }, 400)
-// }
+function foo(a) {
+    var b = a + 2;
 
-function sayHiBye(firstName, lastName) {
-    function getFullName() {
-        return firstName + " " + lastName;
+    function bar(c) {
+        console.log(a,b,c)
     }
 
-    console.log("Hello", getFullName())
+    bar(b * 2);
 }
 
-console.log(sayHiBye("Tania","Kedrova"))
+foo(3);
 
-function makeCounter() {
-    let count = 0;
+function foo2() {
+    var a = 2;
 
-    return function() {
-        return count++;
+    function bar() {
+        console.log(a);
     }
+    return bar;
 }
 
-let counter = makeCounter();
-console.log(counter());
-console.log(counter());
-console.log(counter());
-console.log(counter());
+var baz = foo2();
 
-let counter2 = makeCounter();
-console.log(counter2());
-console.log(counter2());
-console.log(counter2());
-console.log(counter2());
+baz();
+console.log(foo2());
+
+function fib1(n) {
+
+    if (n <=1) {
+        return 1
+    }
+
+    return fib1(n - 1) + fib1(n - 2)
+
+}
