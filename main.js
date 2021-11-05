@@ -1,8 +1,11 @@
-//strings javascript
+//array move an item
+// import 'array.prototype.move';  
 
-let str = 'Vasiliy Lanovoi';
-console.log(str.includes(" "));
-console.log(str.indexOf(" "));
-if(str.includes(' ')) {
-    console.log( `${str.slice(0,1)}${str.slice(str.indexOf(' ')+1, str.indexOf(' ')+2)}`);
-};
+let arr = ["apple", "orange", "grapes", "tomato", "pomegranate", "lemon", "strawberry"];
+
+const moveMyStory = (arr) => {
+    const newArr = arr.splice(0, 0, arr.splice(2, 1).toString());
+    return arr;
+}
+
+console.log(moveMyStory(arr));
