@@ -1,21 +1,10 @@
-//this
+const containers = document.querySelector(".content");
 
-this.x = 9;
-
-console.log(" x: ", x);
-console.log(this);
-
-const module = {
-    x: 81,
-    getX: function() {
-        // console.log("this inside objetc module: ", this);
-        return this.x;
-    }
+for (let i = 0; i < containers.length; i++) {
+    containers[i].addEventListener('click', displayEventPhase, false);
 }
 
-console.log(module.getX());
-
-const retrieveX = module.getX;
-retrieveX(); 
-const boundX = retrieveX.bind(module);
-boundX();
+function displayEventPhase( e ) {
+    let phase = e.eventPhase;
+    
+}
