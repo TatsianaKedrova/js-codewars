@@ -1,11 +1,21 @@
-//array move an item
-// import 'array.prototype.move';  
+//this
 
-let arr = ["apple", "orange", "grapes", "tomato", "pomegranate", "lemon", "strawberry"];
+this.x = 9;
 
-const moveMyStory = (arr) => {
-    const newArr = arr.splice(0, 0, arr.splice(2, 1).toString());
-    return arr;
+console.log(" x: ", x);
+console.log(this);
+
+const module = {
+    x: 81,
+    getX: function() {
+        // console.log("this inside objetc module: ", this);
+        return this.x;
+    }
 }
 
-console.log(moveMyStory(arr));
+console.log(module.getX());
+
+const retrieveX = module.getX;
+retrieveX(); 
+const boundX = retrieveX.bind(module);
+boundX();
