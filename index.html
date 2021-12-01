@@ -7,16 +7,25 @@
     <title>JS Simple</title>
   </head>
   <body>
+ 
+    <form onclick="alert('form')">FORM
+      <div onclick="alert('div')" style="height: 50px; width: 100px; background-color: blueviolet;" class="divHeight">DIV
+        <p onclick="alert('p');  event.stopPropagation()">P</p>
+      </div>
+    </form>
+
     <div class="content">
-      <div id="1" class="content" style="background-color: blueviolet;">
-        1
-        <div id="2" class="content" style="background-color: chocolate;">
+      <div id="one" class="content" style="background-color: blueviolet;">
+        1 and the only one
+        <div id="two" class="content" style="background-color: chocolate;">
           2
-          <div id="3" class="content
+          <div id="three" class="content
           " style="background-color: cornsilk;">3</div>
         </div>
       </div>
     </div>
+    <script src="./script.ts"></script>
+    <script src="./third.js"></script>
     <script src="./main.js"></script>
   </body>
 </html>
