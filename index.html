@@ -1,39 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JS Simple</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Position Absolute and Relative Example</title>
   </head>
   <body>
-    <form onclick="alert('form')">
-      FORM
-      <div
-        onclick="alert('div')"
-        style="height: 50px; width: 100px; background-color: blueviolet"
-        class="divHeight"
-      >
-        DIV
-        <p onclick="alert('p');  event.stopPropagation()">P</p>
-      </div>
-    </form>
-
-    <div class="content">
-      <div id="one" class="content" style="background-color: blueviolet">
-        1 and the only one
-        <div id="two" class="content" style="background-color: chocolate">
-          2
-          <div id="three" class="content" style="background-color: cornsilk">
-            3
-          </div>
-        </div>
-      </div>
+    <div class="parent">
+      <div class="box" id="one">One</div>
+      <div class="box" id="two">Two</div>
+      <div class="box" id="three">Three</div>
+      <div class="box" id="four">Four</div>
     </div>
 
-    <script src="./main.js"></script>
+    <div class="grandparent">
+      <div class="cross" id="five">One</div>
+      <div class="cross" id="six">Two</div>
+      <div class="cross" id="seven">Three</div>
+      <div class="cross" id="eight">Four</div>
+    </div>
+    <script src="./main.js"/>
   </body>
 </html>
-
-<!-- onclick="alert('form')" -->
-<!-- onclick="alert('div')" -->

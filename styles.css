@@ -1,0 +1,40 @@
+.parent {
+  border: 2px black dotted;
+  display: inline-block;
+  margin: 100px;
+}
+
+.grandparent {
+  border: 2px black dotted;
+  display: block;
+  position: absolute;
+  /* top: 40px; */
+}
+
+.box {
+  display: inline-block;
+  background: red;
+  width: 100px;
+  height: 100px;
+}
+
+.cross {
+  display: inline-block;
+  background: red;
+  width: 100px;
+  height: 100px;
+}
+
+#two {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: green;
+}
+
+#seven {
+  position: absolute;
+  top: 20px;
+  left: 150px;
+  background: pink;
+}
