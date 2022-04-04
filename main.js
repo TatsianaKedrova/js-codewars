@@ -1,56 +1,22 @@
-function* generate() {
-  console.log("first step");
-  yield;
-  console.log(" second step");
-}
-
-console.log(generate());
-
-//iterators
-let generateNumbers = {
-  start: 1,
-  end: 10,
+const obj = {
+  name: "Tania",
+  age: 33,
+  job: "Frontend Developer",
+  hobby: "dancing",
 };
 
-generateNumbers[Symbol.iterator] = function () {
-  let current = this.start;
-  let last = this.end;
-
-  return {
-    next() {
-      if (current <= last) {
-        return {
-          done: false,
-          value: current++,
-        };
-      } else {
-        return {
-          done: true,
-        };
-      }
-    },
-  };
-};
-
-for (let number of generateNumbers) {
-  console.log(number);
+for (let prop in obj) {
+  console.log(prop);
 }
 
-//Symbols
+console.log(obj.hasOwnProperty("job"));
 
-let symbol = Symbol("tania");
-console.log(symbol);
-console.log(typeof symbol);
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 5, 6, 7, 5, 7, 8, 5];
 
-let symbol2 = Symbol("tania");
-console.log(symbol);
-console.log(symbol === symbol2);
+const arr2 = [];
+for (let element of arr) {
+  arr2.push(element);
+}
 
-let name = "tania";
-let name2 = "tania";
-console.log(name === name2);
-
-let symb = Symbol.for("sherif");
-let symb2 = Symbol.for("sherif");
-
-console.log(symb === symb2);
+console.log(arr2);
+console.log(arr === arr2)
