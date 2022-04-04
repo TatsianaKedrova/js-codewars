@@ -1,22 +1,39 @@
-const obj = {
-  name: "Tania",
-  age: 33,
-  job: "Frontend Developer",
-  hobby: "dancing",
-};
-
-for (let prop in obj) {
-  console.log(prop);
+function Developer(name) {
+  this.name = name;
+  this.type = "Deeveloper";
 }
 
-console.log(obj.hasOwnProperty("job"));
-
-const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 5, 6, 7, 5, 7, 8, 5];
-
-const arr2 = [];
-for (let element of arr) {
-  arr2.push(element);
+function Tester(name) {
+  this.name = name;
+  this.type = "Tester";
 }
 
-console.log(arr2);
-console.log(arr === arr2)
+function EmployeeFactory() {
+  this.create = (name, type) => {
+    switch (type) {
+      case 1:
+        return new Developer(name);
+        break;
+      case 2:
+        return new Tester(name);
+        break;
+    }
+  };
+}
+
+function say() {
+  console.log("Hello, " + this.name + " " + this.type);
+}
+
+const employeeFactory = new EmployeeFactory();
+const employees = [];
+
+employees.push(employeeFactory.create("Tatiana Kedrova", 1));
+console.log(employees);
+employees.push(employeeFactory.create("Nadin Sherif", 2));
+
+console.log(employees);
+
+for (let member of employees) {
+  say.apply(member);
+}
