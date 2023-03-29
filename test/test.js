@@ -1,6 +1,6 @@
 function splitToWords(sentence) {
   const arrayOfWords = sentence
-    .replace(/-/g, "")
+    .replace(/[-!.,]/g, "")
     .replace(/\s+/g, " ")
     .trim()
     .split(" ")
@@ -13,7 +13,7 @@ function hasWhiteSpace(sentence) {
 }
 
 let phrase =
-  "                  JS  -     is    a      programming      language";
+  "                  JS  -     is,    a      programming.      language!";
 console.log(splitToWords(phrase));
 console.log(hasWhiteSpace(phrase));
 
